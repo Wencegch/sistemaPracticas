@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\UserController;
 
 //Route::resource('disco', DiskController::class)->names('disk');
 
@@ -10,7 +11,8 @@ use App\Http\Controllers\CompanyController;
 });*/
 
 Route::resource('empresa', CompanyController::class)->names('company');
-
+Route::get('empresa/user/{id}', [CompanyController::class, 'indexFiltrado'])->name('company.indexFiltrado');
+Route::resource('usuario', UserController::class)->names('user');
 /*
 Route::get(('about'), function () {
     return view('about');

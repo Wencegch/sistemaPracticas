@@ -13,8 +13,8 @@
         <label for="name">Nombre</label>
         <input type="text" name="name" required>
 
-        <label for="CIF">CIF</label>
-        <input type="text" name="CIF" required>
+        <label for="cif">CIF</label>
+        <input type="text" name="cif" required>
 
         <label for="address">Dirección</label>
         <input type="text" name="address">

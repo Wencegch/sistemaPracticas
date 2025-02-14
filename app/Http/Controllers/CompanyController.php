@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Company;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class CompanyController extends Controller
 {
@@ -13,6 +14,11 @@ class CompanyController extends Controller
     public function index() {
         $companies = Company::all();
         return view('company.index', compact('companies'));
+    }
+
+    public function indexFiltrado($user_id){
+        $companies = User::find($user_id)->companies;
+        return view('company.indexFiltrado', compact('companies'));
     }
 
     /**
@@ -43,7 +49,7 @@ class CompanyController extends Controller
      */
     public function show(string $id)
     {
-        Company::find($id);
+        $company = Company::find($id);
         return view('company.show', compact('company'));
     }
 
