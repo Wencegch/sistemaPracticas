@@ -1,0 +1,17 @@
++-------------------------+
+| [38;5;47;01mTables_in_laravel[39;00m       |
++-------------------------+
+| actions                 |
+| cache                   |
+| cache_locks             |
+| companies               |
+| companies_roles_users   |
+| failed_jobs             |
+| job_batches             |
+| jobs                    |
+| migrations              |
+| pupils_teachers_tutors_ |
+| rols                    |
+| users                   |
++-------------------------+
+
