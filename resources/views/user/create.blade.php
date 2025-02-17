@@ -15,30 +15,48 @@
         <label for="name">Nombre</label>
         <input type="text" name="name" required>
 
+        <br>
+
         <label for="surname1">Apellido 1</label>
         <input type="text" name="surname1" required>
+
+        <br>
 
         <label for="surname2">Apellido 2</label>
         <input type="text" name="surname2">
 
+        <br>
+
         <label for="tlf">Teléfono</label>
         <input type="text" name="tlf">
 
+        <br>
+
         <label for="email">Email</label>
-        <input type="text" name="email" required>
+        <input type="email" name="email" required>
+
+        <br>
 
         <label for="password">Contraseña</label>
         <input type="password" name="password" required>
 
+        <br>
+
         <label for="company_id">Empresa</label>
+
         <select name="company_id" id="company_id">
-            @foreach ($companies as $company)
-                <option value="{{ $company->id }}">{{ $company->name }}</option>
-            @endforeach
+            @if (isset($companies) && count($companies) > 0)
+                @foreach ($companies as $company)
+                    <option value="{{ $company->id }}">{{ $company->name }}</option>
+                @endforeach
+            @endif
         </select>
+
+        <br>
 
         <button type="submit">Crear</button>
     </form>
+
     <a href="{{ route('user.index') }}">Volver al listado</a>
 </body>
 

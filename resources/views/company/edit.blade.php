@@ -17,8 +17,8 @@
         <label for="name">Nombre</label>
         <input type="text" name="name" value="{{ $company->name }}" required>
 
-        <label for="CIF">CIF</label>
-        <input type="text" name="CIF" value="{{ $company->cif }}" required>
+        <label for="cif">CIF</label>
+        <input type="text" name="cif" value="{{ $company->cif }}" required>
 
         <label for="address">Dirección</label>
         <input type="text" name="address" value="{{ $company->address }}">

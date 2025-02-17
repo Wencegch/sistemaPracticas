@@ -11,6 +11,8 @@
 <body>
     <h1>Listado Usuarios</h1>
     <a href="{{ route('user.create') }}">Crear Usuario</a>
+
+    <br><br>
     <table border="1">
         <thead>
             <tr>
@@ -21,6 +23,7 @@
                 <th>Email</th>
                 <th>Empresa</th>
                 <th>Acciones</th>
+                <th>Gestión</th>
             </tr>
         </thead>
         <tbody>
@@ -32,7 +35,10 @@
                     <td>{{ $user->tlf }}</td>
                     <td>{{ $user->email }}</td>
                     <td>
-                        <a href="{{ route('company.indexFiltrado', $user->id) }}"> Empresas</a>
+                        <a href="{{ route('company.indexFiltrado', $user->id) }}"> Ver empresa(s)</a>
+                    </td>
+                    <td>
+                        <a href="">Ver acciones</a>
                     </td>
                     <td>
                         <a href="{{ route('user.edit', $user->id) }}">Editar</a>

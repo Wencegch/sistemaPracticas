@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Company;
 
 class UserController extends Controller
 {
@@ -21,7 +22,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('user.create');
+        $companies = Company::all();
+        return view('user.create', compact('companies'));
     }
 
     /**
@@ -33,7 +35,6 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->surname1 = $request->surname1;
         $user->surname2 = $request->surname2;
-        $user->tlf = $request->tlf;
         $user->email = $request->email;
         $user->password = $request->password;
         $user->save();
@@ -68,7 +69,6 @@ class UserController extends Controller
         $user->surname2 = $request->surname2;
         $user->tlf = $request->tlf;
         $user->email = $request->email;
-        $user->password = $request->password;
         $user->save();
         return redirect()->route('user.index');
     }

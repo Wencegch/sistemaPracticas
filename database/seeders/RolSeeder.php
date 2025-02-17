@@ -16,13 +16,13 @@ class RolSeeder extends Seeder
             'admin' => "Administrador del sistema",
             'teacher' => "Profesor",
             'pupil' => "Alumno",
-            'tutor' => "Tutor del alumno en la empresa",
+            'tutor' => "Tutor del alumno en la empresa"
         ];
 
         foreach ($rols as $rol => $description) {
             \App\Models\Rol::create([
                 'name' => $rol,
-                'description' => $description,
+                'description' => $description
             ]);
         }
     }
