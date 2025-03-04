@@ -8,7 +8,10 @@
 </head>
 <body>
     <h1>Listado de empresas</h1>
+    <a href="{{ route('dashboard') }}">Volver a Dashboard</a>
+    <br>
     <a href="{{ route('company.create') }}">Crear empresa</a>
+
     <table border="1">
         <thead>
             <tr>

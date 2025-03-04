@@ -27,12 +27,18 @@ class DatabaseSeeder extends Seeder
             CompanySeeder::class,
             ActionSeeder::class
         ]);
+        // El administrador admin tiene el rol admin
+        $user = User::where('name', 'admin')->first();
+        $user->rols()->attach(1, ['company_id' => null]);
+
         // El alumno pepito tiene el rol pupil en la  empresa1
         $user = User::where('name', 'pepito')->first();
         $user->companies()->attach(1, ['rol_id' => Rol::where('name', 'pupil')->first()->id]);
+
         // El tutor tutor tiene el rol tutor en la empresa2
         $user = User::where('name', 'tutor')->first();
         $user->companies()->attach(2, ['rol_id' => Rol::where('name', 'tutor')->first()->id]);
+
         // El profesor manolillo tiene el rol teacher en la empresa1
         $user = User::where('name', 'manolillo')->first();
         $user->rols()->attach(2, ['company_id' => 1]);

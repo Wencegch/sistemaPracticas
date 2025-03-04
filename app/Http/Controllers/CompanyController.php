@@ -20,8 +20,9 @@ class CompanyController extends Controller
      * Método para mostrar las empresas de un usuario
     */
     public function indexFiltrado($user_id){
-        $companies = User::find($user_id)->companies;
-        return view('company.indexFiltrado', compact('companies'));
+        $user = User::find($user_id);
+        $companies = $user->companies;
+    return view('company.indexFiltrado', compact('user'));
     }
 
     /**

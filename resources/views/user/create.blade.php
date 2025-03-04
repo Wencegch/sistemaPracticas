@@ -54,6 +54,15 @@
 
         <br>
 
+        <label for="role_id">Rol</label>
+        <select name="rol_id" id="rol_id">
+            @if (isset($rols) && count($rols) > 0)
+                @foreach ($rols as $rol)
+                    <option value="{{ $rol->id }}">{{ $rol->name }}</option>
+                @endforeach
+            @endif
+        </select>
+
         <button type="submit">Crear</button>
     </form>
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Company;
+use App\Models\Rol;
 
 class UserController extends Controller
 {
@@ -22,8 +23,11 @@ class UserController extends Controller
      */
     public function create()
     {
+        //Crea un array para mandar companies y rols a la vista
         $companies = Company::all();
-        return view('user.create', compact('companies'));
+        $rols = Rol::all();
+
+        return view('user.create', compact('companies', 'rols'));
     }
 
     /**
@@ -38,7 +42,15 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->password = $request->password;
         $user->save();
+        $user->companies()->attach($request->company_id, ['rol_id' => $request->rol_id]);
         return redirect()->route('user.index');
+    }
+
+    //Método para añadir una empresa a un usuario
+    public function addCompanyToUser($user_id, $company_id){
+        $user = User::find($user_id);
+        $user->companies()->attach($company_id);
+        return redirect()->route('user.show', $user_id);
     }
 
     /**

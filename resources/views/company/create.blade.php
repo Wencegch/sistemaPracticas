@@ -23,7 +23,7 @@
         <input type="text" name="tlf">
 
         <label for="contact_email">Email</label>
-        <input type="text" name="contac_email">
+        <input type="text" name="contact_email">
 
         <button type="submit">Crear</button>
     </form>

@@ -11,7 +11,7 @@
 <body>
     //Se llega a esta página desde la vista indexFiltrado.blade.php de la entidad Company y se le pasa el id del usuario
     al que se le quiere añadir una empresa
-    <h1>Añadir empresa a usuario</h1>
+    <h1>Añadir empresa al usuario {{ $user->name }}</h1>
     <form action="{{ route('company.storeCompanyToUser', $user->id) }}" method="POST">
         @csrf
         <label for="company_id">Empresa</label>

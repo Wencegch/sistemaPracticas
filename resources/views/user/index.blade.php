@@ -10,9 +10,10 @@
 
 <body>
     <h1>Listado Usuarios</h1>
+    <a href="{{ route('dashboard') }}">Volver a Dashboard</a>
+    <br>
     <a href="{{ route('user.create') }}">Crear Usuario</a>
 
-    <br><br>
     <table border="1">
         <thead>
             <tr>
@@ -35,18 +36,14 @@
                     <td>{{ $user->tlf }}</td>
                     <td>{{ $user->email }}</td>
                     <td>
-                        <a href="{{ route('company.indexFiltrado', $user->id) }}"> Ver empresa(s)</a>
+                        <a href="{{ route('company.indexFiltrado', $user) }}"> Ver empresa(s)</a>
                     </td>
                     <td>
                         <a href="">Ver acciones</a>
                     </td>
                     <td>
-                        <a href="{{ route('user.edit', $user->id) }}">Editar</a>
-                        <form action="{{ route('user.destroy', $user->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit">Eliminar</button>
-                        </form>
+                        <a href="{{ route('user.show', $user->id) }}">Ver detalles</a>
+
                     </td>
                 </tr>
             @endforeach
