@@ -11,7 +11,11 @@
     <a href="{{ route('dashboard') }}">Volver a Dashboard</a>
     <br>
     <a href="{{ route('rol.create') }}">Crear nuevo rol</a>
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> f47b836a574385b55b29b12991f0097cbc9876e6
     <table border="1">
         <thead>
             <tr>

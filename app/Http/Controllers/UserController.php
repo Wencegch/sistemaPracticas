@@ -52,7 +52,11 @@ class UserController extends Controller
         $user->companies()->attach($company_id);
         return redirect()->route('user.show', $user_id);
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> f47b836a574385b55b29b12991f0097cbc9876e6
     /**
      * Display the specified resource.
      */
